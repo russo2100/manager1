@@ -47,4 +47,6 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("5.3 4/64");
         assertArrayEquals(expected, actual);
     }
+
+
 }

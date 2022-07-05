@@ -1,6 +1,5 @@
 package ru.netology.manager;
 
-import org.jetbrains.annotations.NotNull;
 
 public class ProductManager {
     ProductRepository repository;
@@ -30,12 +29,11 @@ public class ProductManager {
         return result;
     }
 
-    public boolean matches(@NotNull Product product, String search) {
+    public boolean matches(Product product, String search) {
         if (product.getTitle().contains(search)) {
             return true;
         } else {
             return false;
         }
-
     }
 }
