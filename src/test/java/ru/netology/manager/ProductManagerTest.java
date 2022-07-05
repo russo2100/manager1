@@ -32,12 +32,6 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldFindSeveralByBookAuthor() {
-        Product[] expected = new Product[]{firstBook, secondBook};
-        Product[] actual = manager.searchBy("lEwIs cArRoLl");
-         assertArrayEquals(expected, actual);
-    }
 
     @Test
     public void shouldFindByBookTitle() {
