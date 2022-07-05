@@ -1,7 +1,5 @@
 package ru.netology.manager;
 
-import ru.netology.manager.Product;
-
 public class ProductRepository {
     private Product[] product = new Product[0];
 

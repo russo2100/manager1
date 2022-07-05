@@ -1,9 +1,6 @@
 package ru.netology.manager;
 
-import ru.netology.manager.Book;
-import ru.netology.manager.Product;
-import ru.netology.manager.Smartphone;
-import ru.netology.manager.ProductRepository;
+import org.jetbrains.annotations.NotNull;
 
 public class ProductManager {
     ProductRepository repository;
@@ -33,26 +30,12 @@ public class ProductManager {
         return result;
     }
 
-    public boolean matches(Product product, String search) {
-        if (product instanceof Book) {
-            Book book = (Book) product;
-            if (book.getTitle().equalsIgnoreCase(search)) {
-                return true;
-            }
-            if (book.getAuthor().equalsIgnoreCase(search)) {
-                return true;
-            }
+    public boolean matches(@NotNull Product product, String search) {
+        if (product.getTitle().contains(search)) {
+            return true;
+        } else {
             return false;
         }
-        if (product instanceof Smartphone) {
-            Smartphone smartphone = (Smartphone) product;
-            if (smartphone.getTitle().equalsIgnoreCase(search)) {
-                return true;
-            }
-            if (smartphone.getManufacturer().equalsIgnoreCase(search)) {
-                return true;
-            }
-        }
-        return false;
+
     }
 }
