@@ -17,8 +17,12 @@ public class ProductRepository {
     }
 
     public void removeById(int id) {
-        int length = product.length - 1;
-        Product[] tmp = new Product[length];
+        if (id < 0) {
+            throw new NotFoundException(
+                    "ID не может быть отрицательным" + id
+            );
+        }
+        Product[] tmp = new Product[product.length -1];
         int index = 0;
         for (Product item : product) {
             if (item.getId() != id) {
